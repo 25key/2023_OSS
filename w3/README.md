@@ -31,32 +31,30 @@
 ### 2주차 숙제
 
 ```bash
-#!/usr/bin/env bash
+#! /bin/bash
+
 echo "----------"
 echo "name :"
 
-echo
 
 echo "----------"
 echo "student id :"
 
 
-file_path=`find /home/kau2/ -name w2_homework.txt 2> /dev/null`
 echo "----------"
-echo
-echo "file path :"
-echo $file_path
-echo
-
-line_num=`wc -l $file_path | cut -c 1 -`
+echo -e "\nfile path :"
+w2_homework=`find /home/kau2 -name "w2_homework.txt" 2> /dev/null`
+echo -e "$w2_homework\n"
 echo "----------"
 echo "line number :"
-echo $line_num
-echo
-
+line=`cat $w2_homework | wc -l`
+echo -e "$line\n"
 echo "----------"
-echo "lask line :"
-tail -n 1 $file_path
+echo "last line :"
+last=`tail -n 1 $w2_homework`
+echo $last
+
+exit 0
 ```
 
 ## 마크다운
